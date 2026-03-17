@@ -24,18 +24,25 @@ function typeWriter(){
 }
 typeWriter();
 
-// PLAY MUSIC
-window.onload = function(){
-  const music = document.getElementById("bgMusic");
-  music.play().catch(()=>{}); // works on desktop, mobile may need tap
-};
+// MUSIC START ON FIRST TAP (MOBILE COMPATIBLE)
+let musicStarted = false;
+const music = document.getElementById("bgMusic");
 
-// GO TO VIDEO
-function goToVideo(){
-  const music = document.getElementById("bgMusic");
-  music.pause();
-  window.location.href = "video.html";
+function startMusicOnce(e){
+  if(!musicStarted){
+    music.play().catch(()=>{});
+    musicStarted = true;
+  }
 }
+
+// Attach to the **surprise button AND whole body** for mobile
+document.body.addEventListener("click", startMusicOnce, {once:true});
+
+// TAP FOR SURPRISE BUTTON
+document.getElementById("surpriseBtn").addEventListener("click", function(){
+  music.pause(); // stop music
+  window.location.href = "video.html"; // go to video
+});
 
 // BUBBLES
 const bubbleContainer=document.querySelector(".bubbles");
