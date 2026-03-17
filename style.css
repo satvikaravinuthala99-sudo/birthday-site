@@ -1,0 +1,111 @@
+body {
+  margin:0;
+  font-family:sans-serif;
+  text-align:center;
+  overflow-x:hidden;
+
+  background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
+  background-size: 1400% 1400%;
+  animation: rainbow 30s ease infinite;
+}
+
+@keyframes rainbow {
+  0% {background-position:0%}
+  50% {background-position:100%}
+  100% {background-position:0%}
+}
+
+/* TITLE */
+.title {
+  color:white;
+  font-size:40px;
+  animation:glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from {text-shadow:0 0 10px white;}
+  to {text-shadow:0 0 30px white;}
+}
+
+/* MESSAGE BOX */
+.card {
+  background: rgba(255,255,255,0.95);
+  padding:20px;
+  border-radius:15px;
+  margin:20px auto;
+  max-width:650px;
+  box-shadow: 0 0 20px white, 0 0 40px pink;
+}
+
+/* IMPORTANT FOR LINE BREAKS */
+#typing {
+  white-space: pre-line;
+  font-size:16px;
+}
+
+/* PHOTO */
+.main-photo {
+  width:250px;
+  border-radius:20px;
+  margin:20px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.4);
+  transition:0.3s;
+}
+
+.main-photo:hover {
+  transform:scale(1.05);
+}
+
+/* BUTTON */
+.btn {
+  padding:12px 25px;
+  border:none;
+  border-radius:25px;
+  background:#ff4da6;
+  color:white;
+  font-size:18px;
+  cursor:pointer;
+  margin:20px;
+}
+
+.btn:hover {
+  transform:scale(1.05);
+}
+
+/* VIDEO */
+.video-container {
+  max-width:600px;
+  margin:20px auto;
+  display:none;
+}
+
+video {
+  width:100%;
+  border-radius:10px;
+}
+
+/* BUBBLES */
+.bubbles {
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  pointer-events:none;
+}
+
+.bubbles span {
+  position:absolute;
+  bottom:-50px;
+  width:8px;
+  height:8px;
+  background:white;
+  border-radius:50%;
+  opacity:0.6;
+  animation: rise linear infinite;
+}
+
+@keyframes rise {
+  0% {transform:translateY(0);}
+  100% {transform:translateY(-100vh);}
+}
