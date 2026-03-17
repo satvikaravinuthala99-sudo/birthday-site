@@ -5,7 +5,7 @@ body {
 
   background: linear-gradient(270deg, red, orange, yellow, green, blue, indigo, violet);
   background-size: 1400% 1400%;
-  animation: rainbow 60s ease infinite; /* slower color change */
+  animation: rainbow 60s ease infinite;
 }
 
 @keyframes rainbow {
@@ -63,6 +63,18 @@ body {
   color:white;
   border:none;
   border-radius:25px;
+  cursor:pointer;
+}
+
+.small-btn {
+  display:block;
+  margin:10px auto;
+  padding:8px 15px;
+  font-size:14px;
+  background:#8888ff;
+  color:white;
+  border:none;
+  border-radius:15px;
   cursor:pointer;
 }
 

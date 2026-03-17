@@ -24,24 +24,20 @@ function typeWriter(){
 }
 typeWriter();
 
-// MUSIC START ON FIRST TAP (MOBILE COMPATIBLE)
-let musicStarted = false;
+// MUSIC
 const music = document.getElementById("bgMusic");
 
-function startMusicOnce(e){
-  if(!musicStarted){
+// SMALL IOS BUTTON
+const iosBtn = document.getElementById("startMusicBtn");
+iosBtn.addEventListener("click", () => {
     music.play().catch(()=>{});
-    musicStarted = true;
-  }
-}
+    iosBtn.style.display = "none"; // hide after tap
+});
 
-// Attach to the **surprise button AND whole body** for mobile
-document.body.addEventListener("click", startMusicOnce, {once:true});
-
-// TAP FOR SURPRISE BUTTON
+// TAP FOR SURPRISE
 document.getElementById("surpriseBtn").addEventListener("click", function(){
-  music.pause(); // stop music
-  window.location.href = "video.html"; // go to video
+    music.pause(); // stop music
+    window.location.href = "video.html";
 });
 
 // BUBBLES
