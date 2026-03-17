@@ -6,11 +6,9 @@
 <title>Surprise 🎁</title>
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
 <div class="container">
-
 <h1 class="title">🎥 Special Message 💙</h1>
 
 <video id="videoMessage" controls autoplay>
@@ -22,7 +20,7 @@
 <script>
 const video = document.getElementById("videoMessage");
 
-// After video ends → go back
+// After video ends → go back to homepage
 video.onended = function(){
   window.location.href = "index.html";
 };
