@@ -24,11 +24,16 @@ function typeWriter(){
 }
 typeWriter();
 
-// AUTO PLAY MUSIC
-window.onload = function(){
-  const music = document.getElementById("bgMusic");
-  music.play().catch(()=>{});
-};
+// MOBILE-COMPATIBLE MUSIC PLAY
+let musicStarted = false;
+document.body.addEventListener("click", function() {
+  if (!musicStarted) {
+    const music = document.getElementById("bgMusic");
+    music.muted = false;   // unmute
+    music.play();          // start music
+    musicStarted = true;
+  }
+});
 
 // GO TO VIDEO PAGE
 function goToVideo(){
